@@ -6,12 +6,13 @@ Pipeline for the analysis of lichen microbiomes
 > * Compare lichen microbiomes and identify core OTUs
  
  
- # Organization of this repository
+ ## Organization of this repository
 
  This repository contains the following directories:
 
- [Alpha-diversity](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Alpha-diversity). Includes rarefaction, diversity indices, abundance plots and diversity cladograms
+[Alpha-diversity](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Alpha-diversity). Rarefaction, diversity indices, abundance plots and diversity cladograms
  
-  [Beta-diversity](). Includes microbiomes comparison differentially abundant taxa
+[Beta-diversity](). Includes microbiomes comparison differentially abundant taxa
 
-  [Core-diversity](). Includes prevalence of OTUs and core taxa
+[Core-diversity](). Includes prevalence of OTUs and core taxa
+

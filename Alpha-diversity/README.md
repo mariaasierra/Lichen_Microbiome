@@ -1,6 +1,6 @@
 # Alpha diversity 
 
-Files are available on the [Data]() folder.
+Files are available on the [Data](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Data) folder.
 
 You would also need the following R packages:
 
