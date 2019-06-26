@@ -21,7 +21,7 @@ Pipeline for the analysis of lichen microbiomes
 
  This repository contains the following directories:
 
- [Alpha-diversity](http://a.com). Includes rarefaction, diversity indices, abundance plots and diversity cladograms
+ [Alpha-diversity](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Alpha-diversity). Includes rarefaction, diversity indices, abundance plots and diversity cladograms
  
   [Beta-diversity](http://a.com). Includes microbiomes comparison differentially abundant taxa
 
