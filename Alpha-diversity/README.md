@@ -1,14 +1,3 @@
----
-title: "Lichen microbiomes analysis pipelines"
-layout: post
-author: Maria A. Sierra 
-tags:
-- Lichen
-- Microbiomes
-- Bioinformatics
-
----
-
 # Alpha diversity 
 
 Files are available on the [Data]() folder.
