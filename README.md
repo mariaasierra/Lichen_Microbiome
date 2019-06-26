@@ -7,7 +7,7 @@ Pipeline for the analysis of lichen microbiomes
 > * Compare lichen microbiomes and identify core OTUs
  
  
- # Organization of this repository
+ ## Organization of this repository
 
  This repository contains the following directories:
 
