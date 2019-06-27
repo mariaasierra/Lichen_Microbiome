@@ -12,7 +12,7 @@ Pipeline for the analysis of lichen microbiomes
 
 [Alpha-diversity](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Alpha-diversity). Rarefaction, diversity indices, abundance plots and diversity cladograms
  
-[Beta-diversity](). Includes microbiomes comparison differentially abundant taxa
+[Beta-diversity](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Beta-diversity). Includes differentially analysis for microbiomes comparison 
 
-[Core-diversity](). Includes prevalence of OTUs and core taxa
+[Core-diversity](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Core-diversity). Includes prevalence of OTUs and core taxa
 
