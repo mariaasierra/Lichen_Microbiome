@@ -11,4 +11,4 @@ You would also need the following R packages:
 >
 >`library(ggstance)`
 
-![PCoA](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Beta-diversity/pcoa.aldex.pdf)
+![PCoA](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Beta-diversity/figure2)
