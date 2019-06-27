@@ -8,3 +8,7 @@ You would also need the following R packages:
 >`Library(phyloseq)`
 >
 >`Library(ALDEx2)`
+>
+>`library(ggstance)`
+
+![PCoA](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Beta-diversity/pcoa.aldex.pdf)
