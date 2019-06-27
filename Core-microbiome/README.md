@@ -1,6 +1,6 @@
 # Core Microbiome 
 
-Analysis for the bacteria prevalence in Lichen samples. Taxa that are prevalent in all lichen samples are defined as core
+Analysis for the bacteria prevalence in Lichen samples. Taxa that are prevalent in all Lichen samples are defined as core
 
 Files are available on the [Data](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Data) folder.
 
