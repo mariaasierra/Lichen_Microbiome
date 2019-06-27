@@ -14,5 +14,5 @@ Pipeline for the analysis of lichen microbiomes
  
 [Beta-diversity](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Beta-diversity). Includes differentially analysis for microbiomes comparison 
 
-[Core-diversity](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Core-diversity). Includes prevalence of OTUs and core taxa
+[Core-microbiome](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Core-microbiome). Includes prevalence of OTUs and core taxa
 
