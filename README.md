@@ -1,8 +1,8 @@
 # Lichen Microbiomes
 
-Pipeline for the analysis of lichen microbiomes
-> * Identify commensal bacteria associated with lichen thalli
-> * Get richness and diversity measures of lichen genera
+Pipeline for the analysis of Lichen microbiomes
+> * Identify commensal bacteria associated with Lichen thalli
+> * Get richness and diversity measures of Lichen genera
 > * Compare lichen microbiomes and identify core OTUs
  
  
