@@ -1,5 +1,10 @@
-#Alpha diversity 
+# Beta diversity 
+We compare the microbiomes of seven Lichen genera through a differential abundance analysis. 
 
-Files are available on the [Data]() folder.
+Files are available on the [Data](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Data) folder.
 
 You would also need the following R packages:
+
+>`Library(phyloseq)`
+>
+>`Library(ALDEx2)`
