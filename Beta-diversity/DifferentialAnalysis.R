@@ -1,5 +1,6 @@
 library(phyloseq)
 library(ALDEx2)
+library(ggstance)
 #Lichen microbiomes comparison with ALDEx2 
 OTU = read.table("../Data/OTU_table.txt", header=TRUE, sep="\t")
 tax = read.table("../Data/taxonomy_table.txt", header=TRUE, sep="\t")
@@ -54,5 +55,27 @@ pheatmap(as.matrix(OTUfd), border_color = "black",fontsize_row=6,
          fontsize_col = 10, color = col.pal, scale = "none",
          cluster_cols = F, cluster_rows = row.clus,
          annotation_col  = ann, labels_col = NULL,annotation_colors  = ann_colors)
+
+#Tree and relative abundance of ALDEx2 OTUs
+tax<-read.table("../Data/aldex.tax.txt") #taxonomy of the tree
+phylum <- read.table("../Data/aldex.phylum.txt") #File with each node phylum
+tree.aldex<-read.nexus("../Data/aldex.tree.txt") ##Nexus tree
+otus<-as.data.frame(read.csv("../Data/relabun.otus.csv"))
+df <- data.frame(taxa = tax,
+                 Phylum= phylum)
+row.names(df) <- NULL
+gt<-ggtree(tree.aldex,layout = "rectangular", open.angle = T) %<+% df + geom_tippoint(aes(color=Phylum))+
+  geom_tiplab(size=0, align = T, linesize = 0.1, color="black") 
+facet_plot(gt, panel = "Rel. Abundance", 
+           data= otus,
+           geom_barh, mapping = aes(x = value, fill = as.factor(lichen)), stat="identity") +
+  scale_fill_manual(values =c( "chocolate3","maroon","olivedrab",
+                               "mediumaquamarine","steelblue","tan1","pink2")) + 
+  theme(strip.text = element_text(size=15), panel.spacing =unit(0.2, "lines"), legend.position = "left") +
+  labs(fill="Lichen") + guides(color = guide_legend(override.aes = list(size=5)))
+
+
+
+
 
 
