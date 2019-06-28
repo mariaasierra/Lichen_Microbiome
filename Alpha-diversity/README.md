@@ -26,3 +26,5 @@ You would also need the following R packages:
 >`library(ape)`
 >
 >`library(ggtree)`
+
+![Alpha](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/Figure1.jpg)
