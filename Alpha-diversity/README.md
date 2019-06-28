@@ -27,17 +27,17 @@ You would also need the following R packages:
 >
 >`library(ggtree)`
 
-![F1](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/Figures/Fig1.jpg)
+![F1](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Alpha-diversity/Figures/Fig1.jpg)
 Fig 1. Relative abundance of bacterial phyla in Lichen samples.
 
-![F2](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/Figures/F2.jpg)
+![F2](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Alpha-diversity/Figures/F2.jpg)
 Fig 2. Rarefaction curves of Lichen samples
 
-![F3](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/Figures/F3.jpg)
+![F3](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Alpha-diversity/Figures/F3.jpg)
 Fig 3. Diversity measures: Shannon and Simpson indices and number of observed OTUs by Lichen genera
 
-![F4](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/Figures/Fig4.jpg)
+![F4](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Alpha-diversity/Figures/Fig4.jpg)
 Fig 4. Most abundant phyla and class taxa by Lichen genera
 
-![F5](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/Figures/Fig5.jpg)
+![F5](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Alpha-diversity/Figures/Fig5.jpg)
 Fig 5. Cladogram of bacterial phyla in each Lichen genera.
