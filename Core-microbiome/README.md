@@ -17,3 +17,5 @@ You would also need the following R packages:
 >`library(phyloseq)`
 >
 >`library(data.table)`
+
+![Core](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Core-microbiome/Figure3.jpg)
