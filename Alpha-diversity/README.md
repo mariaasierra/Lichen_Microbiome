@@ -30,7 +30,7 @@ You would also need the following R packages:
 ![F1](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/diversityplot.jpg)
 Fig 1. Relative abundance of bacterial phyla in Lichen samples.
 
-![F2](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/rarefaction.jpg)
+![F2](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/Rarefaction.jpg)
 Fig 2. Rarefaction curves of Lichen samples
 
 ![F3](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/measures.jpg)
