@@ -27,4 +27,17 @@ You would also need the following R packages:
 >
 >`library(ggtree)`
 
-![Alpha](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/Figure1.jpg)
+![F1](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/diversityplot.jpg)
+Fig 1. Relative abundance of bacterial phyla in Lichen samples.
+
+![F2](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/rarefaction.jpg)
+Fig 2. Rarefaction curves of Lichen samples
+
+![F3](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/measures.jpg)
+Fig 3. Diversity measures: Shannon and Simpson indices and number of observed OTUs by Lichen genera
+
+![F4](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/abundant.jpg)
+Fig 4. Most abundant phyla and class taxa by Lichen genera
+
+![F5](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Alpha-diversity/diversity.jpg)
+Fig 5. Cladogram of bacterial phyla in each Lichen genera.
