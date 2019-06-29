@@ -18,5 +18,5 @@ You would also need the following R packages:
 >
 >`library(data.table)`
 
-![Core](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Core-microbiome/Figures/Core.jpg)
+![Core](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Core-microbiome/Figures)
 **Core-microbiome.** **a.** Prevalence of OTUs in Lichen samples[Prevalence.R](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Core-microbiome/Prevalence.R). **b.** Cladogram of core OTUs [Core.tree.R](https://github.com/alehsierra/Lichen_Microbiome/blob/master/Core-microbiome/Core.tree.R).
