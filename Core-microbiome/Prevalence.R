@@ -1,6 +1,8 @@
 ### Prevalence Total Lichen Microbiome ###
 library(phyloseq)
 library(data.table)
+library(tidyr)
+library(ggplot2)
 #Prepare phyloseq object 
 OTU = read.table("../Data/OTU_table.txt", header=TRUE, sep="\t")
 tax = read.table("../Data/taxonomy_table.txt", header=TRUE, sep="\t")
@@ -12,7 +14,7 @@ tax.clean = separate(tax.clean, Taxonomy, into = c("Domain", "Phylum", "Class", 
 tax.clean = tax.clean[,-which(names(tax.clean) %in% c("Size", "Strain", "OTU"))]
 OTU.UF = otu_table(as.matrix(OTU.clean), taxa_are_rows=F)
 tax.UF = tax_table(as.matrix(tax.clean))
-meta = read.table("Lichen_metadata.txt", header=TRUE, row.names=1, sep="\t", dec = ".") #Sample names MUST be the same in both files, otherwise is going not going to pair data 
+meta = read.table("../Data/metadata.txt", header=TRUE, row.names=1, sep="\t", dec = ".") #Sample names MUST be the same in both files, otherwise is going not going to pair data 
 meta<-sample_data(meta)
 physeq = phyloseq(OTU.UF, tax.UF, meta)
 physeq.lichen = merge_phyloseq(physeq)
@@ -56,7 +58,7 @@ lichen_melt = function(physeq,
 
 mdt = lichen_melt(physeq.lichen)
 lichen.prev = mdt[, list(Prevalence = mean(count > 0), #Mean of samples with counts greater than cero
-                    TotalCounts = mean(count)),
+                    TotalCounts = sum(count)),
              by = TaxaID]
 addPhylum = unique(copy(mdt[, list(TaxaID, Phylum)])) #Color taxa by phylum
 # Join by TaxaID
@@ -83,6 +85,6 @@ ggplot(lichen.prev[showPhyla],
         legend.text  = element_text(size=12, colour = "gray40"),
         legend.title = element_text(size = 14))
 
-
-
+#Detect Lichen core
+core<-lichen.prev[which(lichen.prev$Prevalence >= 0.9)]
 
