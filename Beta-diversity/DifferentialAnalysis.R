@@ -1,29 +1,31 @@
 library(phyloseq)
 library(ALDEx2)
 library(ggstance)
+library(tidyr)
+library(vegan)
+library(pheatmap)
 #Lichen microbiomes comparison with ALDEx2 
 OTU = read.table("../Data/OTU_table.txt", header=TRUE, sep="\t")
 tax = read.table("../Data/taxonomy_table.txt", header=TRUE, sep="\t")
 row.names(OTU) = OTU$Group
 OTU.clean = OTU[,-which(names(OTU) %in% c("label", "numOtus", "Group"))]
 OTU.UF = otu_table(as.matrix(OTU.clean), taxa_are_rows=F)
-t.otus <- t(OTU.UF) #Transpose OTU
+gg.otus <- t(OTU.UF) #Transpose OTU
 conds.lichen <- c(rep("Cladonia", 9), rep("Cora", 7), rep("Hypotrachyna", 7),
                   rep("Peltigera", 3),rep("Stereocaulon", 7),rep("Sticta", 7),rep("Usnea", 7)) #Lichen genera are the conditions to compare
-x.clr <- aldex.clr(t.otus, conds.lichen, denom = "all") #clr: centred log-ratio transformation
-x.al <- aldex.glm(x.clr, conds.lichen) #test glm: general linear model and Kruskal Wallace
+x<- aldex.clr(gg.otus, conds.lichen, denom = "all")#clr: centred log-ratio transformation
+x.al <- aldex.kw(x)#test glm: general linear model and Kruskal Wallace
 OTU.aldex = x.al[which(x.al$kw.ep < 0.05 | x.al$glm.ep < 0.05),] #OTUs with p<0.05  #glm ANOVA
 
 #Generate new phyloseq file with OTUs differentially abundant between lichen genera p<0.05 from ALDEx2
-OTU.aldex <- cbind(rownames(OTU.aldex), data.frame(OTU.aldex, row.names=NULL))
-colnames(OTU.aldex)[1] <- "OTU"
+OTU.aldex$OTU <- rownames(OTU.aldex)
 taxa.pvalues.aldex <- subset(tax, subset=OTU %in% OTU.aldex$OTU, select = c("Taxonomy")) ##Extract Taxonomy for ALDEx2 OTUs
 row.names(taxa.pvalues.aldex) = OTU.aldex$OTU
 tax.clean = separate(taxa.pvalues.aldex, Taxonomy, into = c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"), sep=";")
 tax.UF = tax_table(as.matrix(tax.clean))
-OTU.clean<-OTU.UF[,OTU.aldex$OTU]
+OTU.clean<-OTU.UF[,row.names(OTU.aldex)]
 OTU.aldex.uf = otu_table(as.matrix(OTU.clean), taxa_are_rows=F)
-meta = read.table("lichen_metadata.txt", header=TRUE, row.names=1, sep="\t", dec = ".") #Sample names MUST be the same in both files, otherwise is going not going to pair data 
+meta = read.table("metadata.txt", header=TRUE, row.names=1, sep="\t", dec = ".") #Sample names MUST be the same in both files, otherwise is going not going to pair data 
 meta<-sample_data(meta)
 physeq = phyloseq(OTU.aldex.uf, tax.UF, meta)
 physeq.lichen.aldex = merge_phyloseq(physeq) ## New phyloseq file with ALDEx2 OTUs
@@ -31,14 +33,17 @@ physeq.lichen.aldex = merge_phyloseq(physeq) ## New phyloseq file with ALDEx2 OT
 #Lichen PCoA by genera
 ord = ordinate(physeq.lichen.aldex, "PCoA", "bray")
 (ordplot <- plot_ordination(physeq.lichen.aldex, ord, "Samples", color="Lichen", axes = 1:2))
+pdf("pcoa.new.pdf", height = 6, width = 6)
 ordplot +  stat_ellipse(type = "t",linetype = 2,alpha=0.5) + geom_point(size=4, alpha=0.5) +
-  geom_point(size=4, alpha=0.5)+ ggtitle("OTUs Aldex") + theme_test() + 
+  geom_point(size=4, alpha=0.5) + theme_test() + 
   scale_color_manual(values =c( "chocolate3","maroon","olivedrab",
-                                "mediumaquamarine","steelblue","tan1","pink2"))
+                                "mediumaquamarine","steelblue","tan1","pink2")) + 
+  theme(legend.text = element_text(face  = "italic", size = 12), legend.title = element_text(size = 20))
+dev.off()
 
 #Heatmap presence/absence all samples
-OTU.aldex.bm[OTU.aldex.uf>0] <-1 #Convert to binary presence/absence
-physeq = phyloseq(OTU.aldex.bm, tax.UF, meta) 
+OTU.aldex.uf[OTU.aldex.uf>0] <-1 #Convert to binary presence/absence
+physeq = phyloseq(OTU.aldex.uf, tax.UF, meta) 
 physeq.heatmap.aldex = merge_phyloseq(physeq)
 OTU2 = as(otu_table(physeq.heatmap.aldex), "matrix")
 OTUdf = as.data.frame(OTU2)
@@ -57,6 +62,7 @@ pheatmap(as.matrix(OTUfd), border_color = "black",fontsize_row=6,
          annotation_col  = ann, labels_col = NULL,annotation_colors  = ann_colors)
 
 #Tree and relative abundance of ALDEx2 OTUs
+write.csv(tax.clean, "aldex.tax2.txt")
 tax<-read.table("../Data/aldex.tax.txt") #taxonomy of the tree
 phylum <- read.table("../Data/aldex.phylum.txt") #File with each node phylum
 tree.aldex<-read.nexus("../Data/aldex.tree.txt") ##Nexus tree
