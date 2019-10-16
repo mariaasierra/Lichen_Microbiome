@@ -16,3 +16,6 @@ Pipeline for the analysis of Lichen microbiomes
 
 [Core-microbiome](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Core-microbiome). Includes prevalence of OTUs and core taxa
 
+## Publications
+
+The microbiomes of seven lichen genera reveal host specificity, a reduced core community and potential as source of antimicrobials. https://www.biorxiv.org/content/10.1101/789032v1
