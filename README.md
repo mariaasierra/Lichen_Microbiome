@@ -10,11 +10,11 @@ Pipeline for the analysis of Lichen microbiomes
 
  This repository contains the following directories:
 
-[Alpha-diversity](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Alpha-diversity). Rarefaction, diversity indices, abundance plots and diversity cladograms
+[Alpha-diversity](https://github.com/mariaasierra/Lichen_Microbiome/tree/master/Alpha-diversity). Rarefaction, diversity indices, abundance plots and diversity cladograms
  
-[Beta-diversity](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Beta-diversity). Includes differentially analysis for microbiomes comparison 
+[Beta-diversity](https://github.com/mariaasierra/Lichen_Microbiome/tree/master/Beta-diversity). Includes differentially analysis for microbiomes comparison 
 
-[Core-microbiome](https://github.com/alehsierra/Lichen_Microbiome/tree/master/Core-microbiome). Includes prevalence of OTUs and core taxa
+[Core-microbiome](https://github.com/mariaasierra/Lichen_Microbiome/tree/master/Core-microbiome). Includes prevalence of OTUs and core taxa
 
 ## Publications
 
