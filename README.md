@@ -18,4 +18,5 @@ Pipeline for the analysis of Lichen microbiomes
 
 ## Publications
 
-The microbiomes of seven lichen genera reveal host specificity, a reduced core community and potential as source of antimicrobials. https://www.biorxiv.org/content/10.1101/789032v1
+
+The Microbiomes of Seven Lichen Genera Reveal Host Specificity, a Reduced Core Community and Potential as Source of Antimicrobials. Front. Microbiol., 2020. https://doi.org/10.3389/fmicb.2020.00398
